@@ -1,0 +1,847 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/Oloruntobi1/pgx_benchmark
+BenchmarkQuery/sqlx-10           	   93373	    129374 ns/op	     520 B/op	      15 allocs/op
+BenchmarkQuery/pgxpool-10        	   87870	    121234 ns/op	     419 B/op	       7 allocs/op
+BenchmarkConcurrentQueries/sqlx-concurrency-1-10         	    9931	   1240423 ns/op	     125 B/op	       3 allocs/op
+BenchmarkConcurrentQueries/pgxpool-concurrency-1-10      	    8754	   1248643 ns/op	      34 B/op	       2 allocs/op
+BenchmarkConcurrentQueries/sqlx-concurrency-10-10        	--- FAIL: BenchmarkConcurrentQueries/sqlx-concurrency-10-10
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+BenchmarkConcurrentQueries/pgxpool-concurrency-10-10     	   10000	   1228621 ns/op	     196 B/op	       5 allocs/op
+BenchmarkConcurrentQueries/sqlx-concurrency-50-10        	--- FAIL: BenchmarkConcurrentQueries/sqlx-concurrency-50-10
+    benchmark_test.go:57: read tcp [::1]:50405->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50406->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50403->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50410->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50411->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50413->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50414->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50412->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50415->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50417->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50416->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50420->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50419->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50418->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50428->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50425->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50424->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50421->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50435->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50434->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50432->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50436->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50433->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50438->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50437->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50443->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50442->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50440->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50445->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50441->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50423->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50446->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50422->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50439->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50447->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50450->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50452->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50449->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50448->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50451->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50456->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50453->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50454->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50458->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50455->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50459->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50460->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50457->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50461->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50444->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50462->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50430->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50431->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50463->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50429->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50464->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50466->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50427->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50426->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50465->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50470->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50471->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50469->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50472->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50473->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50474->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50475->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50476->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50477->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50478->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50468->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50467->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50479->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50480->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50481->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50482->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50483->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50484->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50485->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50486->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50487->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50488->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50489->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50490->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50491->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50492->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50495->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50494->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50493->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50496->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50498->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50497->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50510->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50507->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50499->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50506->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50504->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50508->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50505->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50501->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50502->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50503->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50500->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50511->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50509->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50513->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50512->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50514->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50516->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50515->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50517->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50518->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50519->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50520->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50522->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50521->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50523->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50525->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50524->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50526->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50527->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50528->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50529->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50530->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50531->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50533->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50532->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50548->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50534->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50546->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50545->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50544->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50543->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50541->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50537->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50552->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50535->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50536->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50551->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50550->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50553->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50547->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50555->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50556->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50564->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50558->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50559->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50557->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50561->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50566->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50565->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50569->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50568->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50567->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50563->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50575->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50570->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50579->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50574->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50580->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50577->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50584->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50581->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50588->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50591->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50587->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50586->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50592->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50583->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50589->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50594->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50595->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50596->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50597->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50601->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50603->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50607->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50604->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50606->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50608->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50611->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50610->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50613->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50612->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50605->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50614->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50615->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50616->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50617->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50618->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50619->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50620->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50623->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50622->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50598->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50629->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50628->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50627->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50624->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50625->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50626->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50639->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50636->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50634->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50600->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50637->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50630->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50645->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50646->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50631->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50599->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50651->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50641->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50640->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50650->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50649->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50667->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50665->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50664->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50644->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50663->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50661->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50659->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50660->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50684->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50658->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50657->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50655->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50654->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50682->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50683->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50681->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50680->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50673->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50678->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50674->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50717->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50656->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50688->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50672->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50670->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50669->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50716->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50715->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50668->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50711->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50714->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50712->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50710->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50708->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50706->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50705->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50703->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50702->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50701->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50747->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50700->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50743->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50698->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50699->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50749->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50696->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50750->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50751->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50741->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50755->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50693->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50694->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50695->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50642->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50740->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50692->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50739->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50691->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50738->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50690->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50689->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50736->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50686->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50687->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50734->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50685->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50733->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50775->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50776->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50777->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50773->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50728->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50770->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50766->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50726->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50767->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50780->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50781->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50725->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50791->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50724->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50787->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50788->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50721->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50797->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50795->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50799->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50798->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50722->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50719->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50720->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50759->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50758->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50828->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50752->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50827->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50762->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50833->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50809->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50821->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50820->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50807->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50760->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50803->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50806->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50813->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50802->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: read tcp [::1]:50801->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+BenchmarkConcurrentQueries/pgxpool-concurrency-50-10     	    9817	   1248865 ns/op	     198 B/op	       5 allocs/op
+BenchmarkConcurrentQueries/sqlx-concurrency-100-10       	--- FAIL: BenchmarkConcurrentQueries/sqlx-concurrency-100-10
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+    benchmark_test.go:57: pq: sorry, too many clients already
+BenchmarkConcurrentQueries/pgxpool-concurrency-100-10    	   10000	   1272125 ns/op	     208 B/op	       5 allocs/op
+--- FAIL: BenchmarkConcurrentQueries
+BenchmarkMixedWorkload/sqlx-10                           	--- FAIL: BenchmarkMixedWorkload/sqlx-10
+    benchmark_test.go:106: read tcp [::1]:51277->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51278->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51280->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51291->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51294->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51293->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51296->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51284->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51290->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51295->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51298->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51281->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51300->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51306->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51308->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51305->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51304->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51307->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51302->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51303->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51301->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51299->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51311->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51288->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51310->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51309->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51314->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51318->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51319->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51312->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51320->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51315->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51292->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51313->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51324->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51322->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51321->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51323->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51326->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51317->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51331->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51330->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51325->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51316->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51297->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51289->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51333->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51340->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51328->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51336->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51327->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51332->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51334->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51361->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51360->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51357->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51348->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51347->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51349->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51346->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51344->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51345->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51343->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51337->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51354->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51356->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51353->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51352->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51351->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51350->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51355->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51339->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51358->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51367->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51359->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51366->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51287->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51365->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51364->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51363->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51400->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51399->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51396->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51395->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51394->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51392->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51391->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51393->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51386->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51389->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51388->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51387->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51338->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51385->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51384->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51383->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51382->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51381->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51380->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51379->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51377->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51378->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51376->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51375->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51373->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51374->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51335->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51372->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51371->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51369->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51370->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51368->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51446->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51445->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51444->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51441->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51436->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51435->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51430->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51425->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51424->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51422->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51420->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51421->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51418->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51417->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51416->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51415->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51414->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51408->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51407->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51406->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51405->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51403->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51402->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51401->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51329->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51483->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51476->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51481->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51362->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51470->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51504->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51503->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51479->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51500->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51499->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51495->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51493->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51461->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51492->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51491->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51490->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51459->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51507->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51341->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51449->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51342->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51556->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51555->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51562->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51552->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51558->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51563->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51557->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51547->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51543->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51542->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51541->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51533->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51532->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51531->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51536->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51535->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51587->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51529->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51589->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51590->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51554->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: write tcp [::1]:51472->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51506->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51509->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51505->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51456->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51510->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51437->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: read tcp [::1]:51286->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: write tcp [::1]:51478->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: read tcp [::1]:51279->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: read tcp [::1]:51282->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: write tcp [::1]:51515->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: read tcp [::1]:51285->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: write tcp [::1]:51501->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51487->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51486->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51514->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51485->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51513->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51482->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: read tcp [::1]:51283->[::1]:5499: read: connection reset by peer
+    benchmark_test.go:106: write tcp [::1]:51455->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: write tcp [::1]:51512->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: write tcp [::1]:51518->[::1]:5499: write: broken pipe
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+    benchmark_test.go:106: pq: sorry, too many clients already
+BenchmarkMixedWorkload/pgxpool-10                        	   71558	    342951 ns/op	     870 B/op	      16 allocs/op
+--- FAIL: BenchmarkMixedWorkload
+FAIL
+exit status 1
+FAIL	github.com/Oloruntobi1/pgx_benchmark	117.996s
